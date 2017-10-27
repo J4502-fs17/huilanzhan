@@ -43,7 +43,11 @@ p {
 }
 
 #sidebar {
-	background-color: #022d48;
+	background-color: #7a991a;
+	color: white;
+	padding: 10px;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .item {
