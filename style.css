@@ -13,7 +13,156 @@
 	}
 }
 
+/*grid.css*/
+.headline {
+	display: flex;
+	justify-content: space-between;
+}
+
+.authorbox img {
+  /*visibility: hidden;*/
+  display: none;
+}
+
+.pullquote {
+  display: none;
+}
+
+article {
+  margin-bottom: 0.7em;
+  border-bottom: 1px solid #ccc;
+}
+
+article:last-of-type {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 450px) {
+
+    nav ul {
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+
+    #container {
+        width: 80%;
+    }
+
+    .authorbox img {
+      display: block;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+
+    .authorbox {
+      width: 25%;
+      max-width: 200px;
+      float: left;
+      margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .item1 {
+      margin-right: auto;
+    }
+
+    nav ul li {
+      margin: 5px;
+    }
+
+    .pullquote {
+      display: block;
+    }
+
+}
+
+@media screen and (min-width:1000px) {
+  article {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "a b b"
+        "c c e"
+        ". d d";
+  }
+
+  .authorbox {
+    width: 100%;
+    grid-area: a;
+  }
+
+  .section1 {
+    grid-area: b;
+  }
+
+  .image {
+    grid-area: c;
+  }
+
+  .section2 {
+    grid-area: d;
+  }
+
+  .pullquote {
+    margin-top: 0;
+    grid-area: e;
+  }
+
+  .section1 p:first-of-type, .section2 p:first-of-type {
+    margin-top: 0;
+  }
+
+}
+
+
+@media screen and (min-width:1200px) {
+  article {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "a b b e"
+        "c c c ."
+        ". d d .";
+  }
+}
  /*page.css*/
+
+ .caption {
+     font-size: 0.7em;
+     text-align: right;
+     margin-top: 0;
+     font-style: italic;
+ }
+
+ .byline {
+     font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+     font-size: 0.7em;
+     margin-top: 0.5em;
+     margin-bottom: 0;
+     line-height: normal;
+ }
+
+ .dateline {
+     font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+     font-size: 0.7em;
+     color: #aaa;
+     margin: 0;
+     line-height: normal;
+ }
+
+ .pullquote {
+   font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+   font-size: 1.25em;
+   font-style: italic;
+   line-height: 1.25;
+ }
 
 img {
   border: none;
@@ -25,7 +174,6 @@ p {
   color: black;
   font-size: 16px;
   font-weight: normal;
-  text-align: center;
   /*font-family: Helvetica, Arial, sans-serif;*/
   font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
  }
@@ -45,9 +193,9 @@ p {
 #sidebar {
 	background-color: #7a991a;
 	color: white;
-	padding: 10px;
 	width: 50%;
 	margin: 0 auto;
+	padding: 10px;
 }
 
 .item {
@@ -67,6 +215,14 @@ h1 {
   font-family: 'Merriweather', Georgia, "Times New Roman", serif;
   background-color: #022d48;
 }
+
+h2 {
+  color: black;
+  font-size: 24px;
+  font-weight: normal;
+  /*font-family: Helvetica, Arial, sans-serif;*/
+  font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
+ }
 
 body {
   background-color: #ebe3c3;
@@ -104,4 +260,8 @@ body {
 #nav a:hover, #nav a:active {
   background-color: #7a991a;
   text-decoration: underline;
+}
+
+footer {
+	text-align: center;
 }
